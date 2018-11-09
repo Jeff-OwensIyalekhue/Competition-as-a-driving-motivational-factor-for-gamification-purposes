@@ -16,12 +16,14 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./Ressourcen/Praeambel.tex} % !!! NICHT ENTFERNEN !!!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\Thema}{%
-    Competition as a driving motivational factor for gamification purposes}
+\renewcommand{\Thema}{%    Competition as a driving motivational factor for gamification purposes
+                        Wettbewerb als treibende Motivation in Gamification Kontexten}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./Ressourcen/Anfang.tex} % !!! NICHT ENTFERNEN !!!
@@ -36,37 +38,70 @@
 
 \tableofcontents % Inhaltsverzeichnis
 
-\chapter{Abstract}
-\chapter{Introduction}
+\chapter{Abstrakt}
 
+\chapter{Einleitung}
 \section{Motivation}
-\section{Definition}
+Ein aktueller Trend beim erstellen oder verbessern von Systemen und Programmen ist die Gamification. In der Forschung wird oft untersucht in wie fern die Anwendungen dadurch beeinflusst werden. In dieser Arbeit betrachten wir einen Aspekt aus spielerischen Kontexten: der Wettbewerb.\newline
+Dies ist ein elementares Designelement vieler Spiele, aber auch in vielen anderen Kontexten ist er enthalten. Der Einfluss von Wettbewerb auf die Leistung einer Person wird in dieser Thesis untersucht.
+
+\section{Definitionen}
 \subsection{Gamification}
-Gamification can be described as adding features of games to an other scenario. This is process has no further classifications and the purpose of this doing is to improve the modified setting. It is proclaimed adding characteristics of games to a training environment, is rising the interest of the users and learning increases.
-\subsection{Competition}
-Competition has to be divided into intrinsic and extrinsic , so you can compete against your own performance or you stand in competition with someone or something else.
-\chapter{Approach}
-To observe the influence of competition in the performances, we need a environment where subjects have to perform task in  scenarios facing different aspects of competition.
+Gamification beschreibt den Vorgang Komponenten, welche für Computerspiele charakteristisch sind, zu einer anderen Anwendung hinzu zu fügen. Dies soll der Verbesserung der modifizierten Anwendung. So soll das Interesse der Nutzer dadurch gesteigert oder ein Lerneffekt erhöht werden.
+
+\subsection{Wettbewerb}
+Wettbewerb lässt sich als das Vergleichen von Leistungen definieren. Dies lässt sich zwei Arten unterscheiden: intrinsicher und extrinsischer Wettbewerb.\newline
+Der intrinsische Wettbewerb entspringt einem inneren Antrieb, seine eigene Leistung mit den früheren Leistungen die man selbst erbracht hat zu vergleichen.\newline
+Im Gegensatz dazu steht der extrinsische Wettbewerb, bei dem man sich mit jemanden oder etwas anderem misst.
+
+
+
+
+\chapter{Ansatz und Vorgehensweise}
+ Um den Einfluss von Wettbewerb in der Leistung innerhalb eines spielerischen Szenarios beobachten zu können, braucht man eine Umgebung, in welcher dies unter verschiedenen Gesichtspunkten, möglich ist. Für diesen Zweck implementiere ich ein simples Computerspiel, mit dem die kognitiven Fähigkeiten einer Person testen, die Schwankungen in der Leistung aufzeichnen und verschiedene Testszenarien überprüfen kann.
+ 
 \section{Implementation}
-\subsection{First Iteration}
-implementing base game\newline
-adding network features\newline
-adding visual effects\newline
-'halb coop' mode \newline
-versus mode\newline
-party mode \newline
-collab mode\newline
+Die Implementation kann in drei Bestandteile untergliedert werden. Im ersten Teil wird das Spiel entwickelt, mit dem später die Studie durchgeführt werden soll. Um zu überprüfen, ob dies wie erwartet funktioniert, wird eine Vorstudie durchgeführt. Anhand der Vorstudie sollen Fehler im Spiel behoben werden und erste Ansätze für die folgenden Beobachtungen in der Studie gefunden werden. Der letzte  Teil ist schließlich die Erkenntnisse der Vorstudie umzusetzen und die Testumgebung für die Studie vorzubereiten.
+
+\subsection{Technologie}
+Für die Entwicklung wird die Unity Engine 2018.2.2f1 verwendet. Diese Entwicklungsumgebung für Spiele bietet einige Grundlagen und Vorlagen, welche sich anbieten, da eine eigene Entwicklung einer Engine nicht Zielführend für die Arbeit ist.
+
+\subsection{Quellcode Zusammenfassung}
+\subsection{Spielablauf}
+In diesem Abschnitt wird der Ablauf ab Beginn des Programms beschrieben. Der erste Bildschirm ist das Netzwerkmenü, in welchen man wählen kann ob man als Host spielen will oder als Client. Für den Fall, dass man als Client spielt kann man in die Netzwerkadresse des Hosts und den dazugehörigen Port ändern.\newline
+Nach der Wahl zu hosten oder nicht wird man in das Hauptmenü weitergeleitet. Von hier aus kann man eine Runde des Spiels starten, wenn man Host ist den Spielmodus auswählen. in die Einstellungen wechseln, sich vom Netzwerk trennen und damit zurück in das Netzwerkmenü und die Software beenden.\newline
+In den Einstellungen kann man den Pfad angeben auf dem die Daten gespeichert werden sollen. Unter diesem Pfad werden die Logbuchdateien einer Spielrunde gespeichert, sowie die generierten Aufgaben. Wenn man Aufgaben erstellen will kann man hier sagen wie viele Funktionen pro Runde generiert werden sollen. Alternativ kann man auch einstellen, dass die Aufgaben während des Spielens zufällig erzeugt werden. Weitere Einstellungen beziehen sich auf die Darstellung des Spiels. So ist es möglich die Anzeigen für die verbleibende Zeit und die Punkte jeweils zu deaktivieren. Die Dauer einer Spielrunde wird auch hier bestimmt man kann, also angeben ob eine Runde nach einer gewünschten Zeit endet oder solange weiter geht bis der Nutzer sie per Tastendruck beendet. Auch die Lautstärke der Musik und der Soundeffekte lassen sich in den Einstellungen regulieren. Informationen zu dem Spieler die für die Logbuchdateien benötigt werden, werden auch hier angegeben, dazu zählt die Indentifikationsnummer und das Geschlecht. Auch die Angabe in wie viele Runden bereits gespielt wurden lassen sich hier verändern. Wenn man die Einstellungen werden diese gespeichert, nur die Informationen zu einen Nutzer werden nicht persistent hinterlegt.
+
+
+\subsubsection{Modi und Testszenarien}
+Das Spiel besitzt verschiedene Modi um die unterschiedlichen Testszenarien abzubilden. Die Modi erben in einer bestimmten von einem Standardmodus. Der Ursprungsmodus lässt sich schon mittels der Einstellungen modifizieren. Änderungen durch veränderte Einstellungen sind zum Beispiel die Dauer des Spiels, das Anzeigen der erzielten Punkte oder der verbleibenden Zeit. Das Spiel terminiert entweder manuell nach dem betätigen der 'escape'-Taste oder nach einer gesetzten Zeit, da diese auch als 'unendlich' eingestellt werden kann, ist das händische Beenden immer möglich. Die Aufgaben können während eines Spieldurchlaufs zufällig generiert werden oder im Vorfeld erstellt, gespeichert und dann für ein Spiel geladen werden. Im folgenden werden alle Implementierten Modi beschrieben:\itemize
+\item''Singleplayer''-Modus:\newline
+Dieser Modus entspricht dem Basisspiel. Man spielt ohne Gegner und versucht einen möglichst hohe Punktzahl zu erzielen.
+\item''Halb-Coop''-Modus:\newline{}
+Der Gedanke in dieser Variante ist das zwei oder mehrere Menschen den Einzelspielermodus parallel spielen. Dafür synchronisiert sich der Start des Spiels der Personen. Ansonsten entspricht alles dem Basisspiels.
+\item''Versus''-Modus:\newline
+Der ''Versus''-Modus entspricht einer klassischen Umsetzung von Wettbewerb, zwei Spieler spielen gegen einander. Die Punktzahlen von beiden werden gegenübergestellt, damit ein Vergleich der Leistung stattfinden kann. Die Punkteanzeige auf dem Bildschirm eines Nutzers ist in dieser Variante leicht modifiziert,  denn sie zeigt  auch den Punktestand des Gegenübers an (Bsp. X vs. Y, mit X als die Punkte des Spielers und Y als die Punkte des Gegners).
+%\item''Versus 2''-Modus:\newline
+\item''Party''-Modus:\newline
+Um den Wettbewerb mit mehreren Teilnehmern darzustellen wurde dieser Modus implementiert. Die Teilnehmerzahl ist variabel und wird mit ''falschen Spielern'' von Spiel aufgefüllt, wenn eine gewünschte Spielerzahl nicht mit Nutzern erreicht wird. Das Userinterface ähnelt mehr dem der Einzelspielermodi als dem der ''Versus''-Modus, mit einem unterschied es gibt eine Ranglistenanzeige, die die Punkte der Nutzer und der, falls vorhanden, falschen Spieler in Verhältnis setzt. Die Person ganz oben in der Liste hat die höchste Punktzahl, wenn man nicht an dieser Position ist signalisiert die Liste das, indem sie leicht pulsiert.
+\item''Collab''-Modus:\newline
+Ein Modus, der etwas gegen den Gedanken der anderen Modi geht, wurde auch implementiert.  In diesem Modus kooperieren die Spieler um einen gemeinsamen Punktstand zu erhöhen. In diesem Modus entspricht der Bildschirm wieder dem des Basisspiels, der unterschied zwischen einem eigen Beitrag zum Punktestand und dem eines Mitspielers, ist die Animation ob man einen oder keinen Punkt hinzugefügt, beziehungsweise abgezogen hat.
+
 further improvement of visual (on going)\newline
-usability improvements\newline
-log files\newline
+usability improvements
+\subsubsection{Datensammlung und Spielverlaufslogbuch}
+Während eines Spieldurchlaufs wollen wir verschiedene Faktoren beobachten, um Rückschlüsse auf die Einflüsse der Testszenarien  machen zu können. Für diesen Zweck sammeln wir  Daten des Spielverlaufs und lassen sie uns für eine spätere Analyse speichern. Vom Spiel werden nach einer Runde drei Dateien angelegt, die die gewünschten Ereignisse dokumentieren. Die Logbuchdateien eines Spielers werden in einen Ordner unter einem angegeben Pfad gespeichert, welcher in der Form ''ParticipantX'', wobei X der jeweiligen Nutzeridentifikationsnummer entspricht (Bsp. Participant1), benannt wird.
+
 \subsection{Pre-Study}
 first data impression (no learning in later turns?)
 bug report
-\subsection{Second Iteration}
+\subsection{Second Phase}
 bug fixes\newline
 removal of animations\newline
 scripted player\newline
-\chapter{User Study}
-\chapter{Conclusion}
+
+\chapter{Nutzerstudie}
+
+\chapter{Ausblick}
 
 \end{document}
