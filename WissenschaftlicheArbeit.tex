@@ -30,7 +30,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
+\bibliographystyle{unsrt}
 \title{\Thema}
 \author{Jeff-Owens Iyalekhue}
 \date{Datum}
@@ -52,7 +52,7 @@ Gamification beschreibt den Vorgang Komponenten, welche für Computerspiele char
 \subsection{Wettbewerb}
 Wettbewerb lässt sich als das Vergleichen von Leistungen definieren. Dies lässt sich zwei Arten unterscheiden: intrinsicher und extrinsischer Wettbewerb.\newline
 Der intrinsische Wettbewerb entspringt einem inneren Antrieb, seine eigene Leistung mit den früheren Leistungen die man selbst erbracht hat zu vergleichen.\newline
-Im Gegensatz dazu steht der extrinsische Wettbewerb, bei dem man sich mit jemanden oder etwas anderem misst.
+Im Gegensatz dazu steht der extrinsische Wettbewerb, bei dem man sich mit jemanden oder etwas anderem misst.\cite{Deci1981}
 
 
 
@@ -64,14 +64,23 @@ Im Gegensatz dazu steht der extrinsische Wettbewerb, bei dem man sich mit jemand
 Die Implementation kann in drei Bestandteile untergliedert werden. Im ersten Teil wird das Spiel entwickelt, mit dem später die Studie durchgeführt werden soll. Um zu überprüfen, ob dies wie erwartet funktioniert, wird eine Vorstudie durchgeführt. Anhand der Vorstudie sollen Fehler im Spiel behoben werden und erste Ansätze für die folgenden Beobachtungen in der Studie gefunden werden. Der letzte  Teil ist schließlich die Erkenntnisse der Vorstudie umzusetzen und die Testumgebung für die Studie vorzubereiten.
 
 \subsection{Technologie}
-Für die Entwicklung wird die Unity Engine 2018.2.2f1 verwendet. Diese Entwicklungsumgebung für Spiele bietet einige Grundlagen und Vorlagen, welche sich anbieten, da eine eigene Entwicklung einer Engine nicht Zielführend für die Arbeit ist.
+Für die Entwicklung wird die Unity Engine 2018.2.2f1 verwendet. Diese Entwicklungsumgebung für Spiele bietet einige Grundlagen und Vorlagen, welche sich anbieten, da eine eigene Entwicklung einer Engine nicht Zielführend für die Arbeit ist. Für die Analyse der Dateien wird Microsoft Excel verwendet.
 
 \subsection{Quellcode Zusammenfassung}
-\subsection{Spielablauf}
-In diesem Abschnitt wird der Ablauf ab Beginn des Programms beschrieben. Der erste Bildschirm ist das Netzwerkmenü, in welchen man wählen kann ob man als Host spielen will oder als Client. Für den Fall, dass man als Client spielt kann man in die Netzwerkadresse des Hosts und den dazugehörigen Port ändern.\newline
-Nach der Wahl zu hosten oder nicht wird man in das Hauptmenü weitergeleitet. Von hier aus kann man eine Runde des Spiels starten, wenn man Host ist den Spielmodus auswählen. in die Einstellungen wechseln, sich vom Netzwerk trennen und damit zurück in das Netzwerkmenü und die Software beenden.\newline
-In den Einstellungen kann man den Pfad angeben auf dem die Daten gespeichert werden sollen. Unter diesem Pfad werden die Logbuchdateien einer Spielrunde gespeichert, sowie die generierten Aufgaben. Wenn man Aufgaben erstellen will kann man hier sagen wie viele Funktionen pro Runde generiert werden sollen. Alternativ kann man auch einstellen, dass die Aufgaben während des Spielens zufällig erzeugt werden. Weitere Einstellungen beziehen sich auf die Darstellung des Spiels. So ist es möglich die Anzeigen für die verbleibende Zeit und die Punkte jeweils zu deaktivieren. Die Dauer einer Spielrunde wird auch hier bestimmt man kann, also angeben ob eine Runde nach einer gewünschten Zeit endet oder solange weiter geht bis der Nutzer sie per Tastendruck beendet. Auch die Lautstärke der Musik und der Soundeffekte lassen sich in den Einstellungen regulieren. Informationen zu dem Spieler die für die Logbuchdateien benötigt werden, werden auch hier angegeben, dazu zählt die Indentifikationsnummer und das Geschlecht. Auch die Angabe in wie viele Runden bereits gespielt wurden lassen sich hier verändern. Wenn man die Einstellungen werden diese gespeichert, nur die Informationen zu einen Nutzer werden nicht persistent hinterlegt.
+Die verwendete Programmiersprache ist C\#. In der Verwendung mit der Unity Engine wird auch dazugehörige Namespaces verwendet die wichtige Klassen und Funktionen zum erstellen eines Spiels anbieten. Die wichtigsten, selbst erstellten C\#-Skripte werden im folgenden zusammengefasst und ihr Nutzen beschrieben.
+\subsubsection{GameManager.cs}
+\subsubsection{GameLogic.cs}
+\subsubsection{MenuScript.cs}
+\subsubsection{NetworkMenu.cs}
+\subsubsection{NetworkSync.cs}
+\subsubsection{NetworkObject.cs}
 
+\subsection{Spielablauf}
+In diesem Abschnitt wird der Ablauf ab Beginn des Programms beschrieben. Die Oberflächen bestehen aus Knöpfen und Eingabefeldern, navigiert und interagiert wird mittels Maus und Tastatur. Der erste Bildschirm ist das Netzwerkmenü, in welchen man wählen kann ob man als Host spielen will oder als Client. Für den Fall, dass man als Client spielt kann man in die Netzwerkadresse des Hosts und den dazugehörigen Port ändern.\newline
+Nach der Wahl zu hosten oder nicht wird man in das Hauptmenü weitergeleitet. Von hier aus kann man eine Runde des Spiels starten, wenn man Host ist den Spielmodus auswählen. in die Einstellungen wechseln, sich vom Netzwerk trennen und damit zurück in das Netzwerkmenü und die Software beenden.\newline
+In den Einstellungen kann man den Pfad angeben auf dem die Daten gespeichert werden sollen. Unter diesem Pfad werden die Logbuchdateien einer Spielrunde gespeichert, sowie die generierten Aufgaben. Wenn man Aufgaben erstellen will kann man hier sagen wie viele Funktionen pro Runde generiert werden sollen. Alternativ kann man auch einstellen, dass die Aufgaben während des Spielens zufällig erzeugt werden. Weitere Einstellungen beziehen sich auf die Darstellung des Spiels. So ist es möglich die Anzeigen für die verbleibende Zeit und die Punkte jeweils zu deaktivieren. Die Dauer einer Spielrunde wird auch hier bestimmt man kann, also angeben ob eine Runde nach einer gewünschten Zeit endet oder solange weiter geht bis der Nutzer sie per Tastendruck beendet. Auch die Lautstärke der Musik und der Soundeffekte lassen sich in den Einstellungen regulieren. Informationen zu dem Spieler die für die Logbuchdateien benötigt werden, werden auch hier angegeben, dazu zählt die Identifikationsnummer und das Geschlecht. Auch die Angabe in wie viele Runden bereits gespielt wurden lassen sich hier verändern. Wenn man die Einstellungen werden diese gespeichert, nur die Informationen zu einen Nutzer werden nicht persistent hinterlegt.\newline
+Im Hauptmenü kann eine Spielpartie gestartet werden in dem auf den  ''Start''-Knopf gedrückt wird und alle nötigen Teilnehmer für den Modus bereit sind. Der ''Singleplayer''-Modus kann immer sofort starten, die anderen Modi verzögern den Spielstart bis alle mit dem Host verbundenen Spieler mit dem ''Start''-Knopf ihre Bereitschaft signalisiert haben. Während der Verzögerung können Nutzer durch erneutes betätigen des Knopfes die Bereitschaft wieder aufheben.\newline
+Im Spiel hat man mehrere Anzeigen und ein Eingabefeld. Die folgende Oberfläche beschreibt einen generellen Fall des Spielmodus und trifft am ehesten auf den ''Singleplayer''-Modus zu. Die Anzeige am mittigen, oberen Bildschirmrand ist die verbleibende Zeit, darunter findet man die ''Score''-Einblendung. Zentral und im Verhältnis am größten dargestellt findet man die zu lösende Rechnung. Unterhalb der Aufgabe ist das Eingabefeld in dem die Lösung eingegeben wird. Zur Eingabe wird die Tastatur verwendet, wobei nur Zahlen eingeben und das '-'-Zeichen akzeptiert werden. Mit der ''Enter/Return''-Taste wird eine Eingabe bestätigt, mit der ''Backspace''-Taste können unbestätigte Eingaben wieder rückgängig gemacht werden. Wenn eine Aufgabe richtig beantwortet bekommt man einen Punkt zum Score hinzu, dies wird durch einen Ton und einer Animation zusätzlich visualisiert. Für den Fall einer falschen Lösung wird die Punktzahl um einen Punkt reduziert, dass überspringen einer Aufgabe ist auch möglich wenn eine leere Eingabe bestätigt wird. Überspringen gibt keinen Punkt zum Score, zieht aber auch keinen ab. Auch das Verlieren oder überspringen einer Aufgabe hat jeweils eine eignen Animation und einen Ton.
 
 \subsubsection{Modi und Testszenarien}
 Das Spiel besitzt verschiedene Modi um die unterschiedlichen Testszenarien abzubilden. Die Modi erben in einer bestimmten von einem Standardmodus. Der Ursprungsmodus lässt sich schon mittels der Einstellungen modifizieren. Änderungen durch veränderte Einstellungen sind zum Beispiel die Dauer des Spiels, das Anzeigen der erzielten Punkte oder der verbleibenden Zeit. Das Spiel terminiert entweder manuell nach dem betätigen der 'escape'-Taste oder nach einer gesetzten Zeit, da diese auch als 'unendlich' eingestellt werden kann, ist das händische Beenden immer möglich. Die Aufgaben können während eines Spieldurchlaufs zufällig generiert werden oder im Vorfeld erstellt, gespeichert und dann für ein Spiel geladen werden. Im folgenden werden alle Implementierten Modi beschrieben:\itemize
@@ -79,7 +88,7 @@ Das Spiel besitzt verschiedene Modi um die unterschiedlichen Testszenarien abzub
 Dieser Modus entspricht dem Basisspiel. Man spielt ohne Gegner und versucht einen möglichst hohe Punktzahl zu erzielen.
 \item''Halb-Coop''-Modus:\newline{}
 Der Gedanke in dieser Variante ist das zwei oder mehrere Menschen den Einzelspielermodus parallel spielen. Dafür synchronisiert sich der Start des Spiels der Personen. Ansonsten entspricht alles dem Basisspiels.
-\item''Versus''-Modus:\newline
+\item''Versus''- \& ''Versus2''-Modus:\newline
 Der ''Versus''-Modus entspricht einer klassischen Umsetzung von Wettbewerb, zwei Spieler spielen gegen einander. Die Punktzahlen von beiden werden gegenübergestellt, damit ein Vergleich der Leistung stattfinden kann. Die Punkteanzeige auf dem Bildschirm eines Nutzers ist in dieser Variante leicht modifiziert,  denn sie zeigt  auch den Punktestand des Gegenübers an (Bsp. X vs. Y, mit X als die Punkte des Spielers und Y als die Punkte des Gegners).
 %\item''Versus 2''-Modus:\newline
 \item''Party''-Modus:\newline
@@ -90,7 +99,9 @@ Ein Modus, der etwas gegen den Gedanken der anderen Modi geht, wurde auch implem
 further improvement of visual (on going)\newline
 usability improvements
 \subsubsection{Datensammlung und Spielverlaufslogbuch}
-Während eines Spieldurchlaufs wollen wir verschiedene Faktoren beobachten, um Rückschlüsse auf die Einflüsse der Testszenarien  machen zu können. Für diesen Zweck sammeln wir  Daten des Spielverlaufs und lassen sie uns für eine spätere Analyse speichern. Vom Spiel werden nach einer Runde drei Dateien angelegt, die die gewünschten Ereignisse dokumentieren. Die Logbuchdateien eines Spielers werden in einen Ordner unter einem angegeben Pfad gespeichert, welcher in der Form ''ParticipantX'', wobei X der jeweiligen Nutzeridentifikationsnummer entspricht (Bsp. Participant1), benannt wird.
+Während eines Spieldurchlaufs wollen wir verschiedene Faktoren beobachten, um Rückschlüsse auf die Einflüsse der Testszenarien  machen zu können. Für diesen Zweck sammeln wir  Daten des Spielverlaufs und lassen sie uns für eine spätere Analyse speichern. Vom Spiel werden nach einer Runde drei Dateien angelegt, die die gewünschten Ereignisse dokumentieren. Die Logbuchdateien eines Spielers werden in einen Ordner unter einem angegeben Pfad gespeichert, welcher in der Form ''ParticipantX'', wobei X der jeweiligen Nutzeridentifikationsnummer entspricht (Bsp. Participant1), benannt wird. Die drei Dateien einer Runde Unterscheiden sich im Dateiformat und gering  im Informationsgehalt. Die im Spiel zu beobachteten Variablen werden zum einen serialisiert und dann als ''.dat'' gespeichert, diese Dateien dienen ausschließlich als redundante Sicherheitskopie und könnten wieder deserialisiert und  geladen werden. Dies ist im Code nicht umgesetzt worden, da keine Notwendigkeit bestand.\newline
+Um den Verlauf einer Runde in der Retrospektive nachvollziehen zu können, werden als ''.txt''-Dateien stichpunktartige Protokolle der Ereignisse dokumentiert.\newline
+Für die Datenauswertung  werden hauptsächlich die ''.csv''-Dateien verwendet. Solche Dateien können in Programmen, die speziell für die Datenverarbeitung  und Analyse dienen, eingelesen und verarbeitet werden.
 
 \subsection{Pre-Study}
 first data impression (no learning in later turns?)
@@ -101,7 +112,15 @@ removal of animations\newline
 scripted player\newline
 
 \chapter{Nutzerstudie}
+\subsection{Aufbau}
+Für einen Durchlauf wid ein Teilnehmer in den Versuchsaufbau gebeten. Es sind zwei Computer aufgebaut auf denen das Spiel läuft und die über das Netzwerk miteinander verbunden sind.
+
+\section{Auswertung der Fragebögen}
+\section{Auswertung der Spieldaten}
 
 \chapter{Ausblick}
+
+\newpage
+\bibliography{Bibliographie}
 
 \end{document}
