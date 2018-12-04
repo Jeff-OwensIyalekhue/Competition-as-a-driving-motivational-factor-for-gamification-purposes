@@ -42,38 +42,46 @@
 
 \chapter{Einleitung}
 \section{Motivation}
-Ein aktueller Trend beim erstellen oder verbessern von Systemen und Programmen ist die Gamification. In der Forschung wird oft untersucht in wie fern die Anwendungen dadurch beeinflusst werden. In dieser Arbeit betrachten wir einen Aspekt aus spielerischen Kontexten: der Wettbewerb.\newline
-Dies ist ein elementares Designelement vieler Spiele, aber auch in vielen anderen Kontexten ist er enthalten. Der Einfluss von Wettbewerb auf die Leistung einer Person wird in dieser Thesis untersucht.
-
+Um Software neu und interessant zu gestalten wird Gamification oft als ein Designmethode verwendet. Die Effektivität dieses Vorgehens war deswegen bereits Subjekt einiger Studien. Diese Bezogen sich meist auf das jeweilige gewünschte Anwendungsgebiet, zum Beispiel ob ein Lerneffekt dadurch beeinflusst wird. In dieser Arbeit wird ein spezieller Aspekt aus spielerischen Kontexten betrachtet: Der Wettbewerb.\newline
+Dies ist ein elementarer Teil vieler Spiele, aber auch in vielen anderen Kontexten ist er enthalten. Er ist eine Quelle der Motivation für Tätigkeiten, aber ob dieser Antrieb auch eine Wirkung auf die Ausübung
+%neu formulieren
+hat steht für uns noch offen. Daher wird der Einfluss von Wettbewerb auf die Leistung einer Person wird in dieser Thesis untersucht, dies speziell in einer spielerischen Umgebung. Auch ob die Motivation andere Auswirkung auf den Umgang mit dem Subjekt haben.
+%
 \section{Definitionen}
 \subsection{Gamification}
 Gamification beschreibt den Vorgang Komponenten, welche für Computerspiele charakteristisch sind, zu einer anderen Anwendung hinzu zu fügen. Dies soll der Verbesserung der modifizierten Anwendung. So soll das Interesse der Nutzer dadurch gesteigert oder ein Lerneffekt erhöht werden.
 
-\subsection{Wettbewerb}
-Wettbewerb lässt sich als das Vergleichen von Leistungen definieren. Dies lässt sich zwei Arten unterscheiden: intrinsicher und extrinsischer Wettbewerb.\newline
-Der intrinsische Wettbewerb entspringt einem inneren Antrieb, seine eigene Leistung mit den früheren Leistungen die man selbst erbracht hat zu vergleichen.\newline
-Im Gegensatz dazu steht der extrinsische Wettbewerb, bei dem man sich mit jemanden oder etwas anderem misst.\cite{Deci1981}
+\subsection{Wettbewerb und Motivation}
+Wettbewerb lässt sich als das Vergleichen von Leistungen definieren und dient als extrinsische Motivation. Motivation lässt sich zwei Arten unterscheiden: intrinsiche und extrinsische Motivation.%\newline
+Der intrinsische Motivation entspringt einem inneren Antrieb seine eigenen Fähigkeiten zu bestätigen.%\newline
+Im Gegensatz dazu steht die extrinsische Motivation, bei der der Anreiz von einem äußeren Faktor entspringt. Im Fall eines Wettbewerb wäre der Anreiz üblicherweise der Sieg und damit das Besiegen des Gegenübers.\cite{Deci1981}
 
 
 
 
 \chapter{Ansatz und Vorgehensweise}
- Um den Einfluss von Wettbewerb in der Leistung innerhalb eines spielerischen Szenarios beobachten zu können, braucht man eine Umgebung, in welcher dies unter verschiedenen Gesichtspunkten, möglich ist. Für diesen Zweck implementiere ich ein simples Computerspiel, mit dem die kognitiven Fähigkeiten einer Person testen, die Schwankungen in der Leistung aufzeichnen und verschiedene Testszenarien überprüfen kann.
+ Um den Einfluss von Wettbewerb in der Leistung innerhalb eines spielerischen Szenarios beobachten zu können, braucht man eine Umgebung, in welcher dies unter verschiedenen Gesichtspunkten, möglich ist. Für diesen Zweck implementiere ich ein simples Computerspiel, mit dem die kognitiven Fähigkeiten einer Person testen, die Schwankungen in der Leistung aufzeichnen und verschiedene Testszenarien überprüfen kann. Zudem sollen die Teilnehmer der Testgruppen einen Fragebogen ausfüllen, der die Beobachtungen der Spielsituationen in einen Kontext setzt.
  
 \section{Implementation}
 Die Implementation kann in drei Bestandteile untergliedert werden. Im ersten Teil wird das Spiel entwickelt, mit dem später die Studie durchgeführt werden soll. Um zu überprüfen, ob dies wie erwartet funktioniert, wird eine Vorstudie durchgeführt. Anhand der Vorstudie sollen Fehler im Spiel behoben werden und erste Ansätze für die folgenden Beobachtungen in der Studie gefunden werden. Der letzte  Teil ist schließlich die Erkenntnisse der Vorstudie umzusetzen und die Testumgebung für die Studie vorzubereiten.
 
 \subsection{Technologie}
-Für die Entwicklung wird die Unity Engine 2018.2.2f1 verwendet. Diese Entwicklungsumgebung für Spiele bietet einige Grundlagen und Vorlagen, welche sich anbieten, da eine eigene Entwicklung einer Engine nicht Zielführend für die Arbeit ist. Für die Analyse der Dateien wird Microsoft Excel verwendet.
+Für die Entwicklung wird die Unity Engine 2018.2.2f1 verwendet. Diese Entwicklungsumgebung für Spiele bietet einige Grundlagen und Vorlagen, welche sich anbieten, da eine eigene Entwicklung einer Engine nicht Zielführend für die Arbeit ist. Für die Analyse der Dateien wird Microsoft Excel verwendet. Um die Fragebögen zu erstellen wurde der Dienst ''Google Formulare'' verwendet.
 
 \subsection{Quellcode Zusammenfassung}
 Die verwendete Programmiersprache ist C\#. In der Verwendung mit der Unity Engine wird auch dazugehörige Namespaces verwendet die wichtige Klassen und Funktionen zum erstellen eines Spiels anbieten. Die wichtigsten, selbst erstellten C\#-Skripte werden im folgenden zusammengefasst und ihr Nutzen beschrieben.
 \subsubsection{GameManager.cs}
+Diese Klasse verwaltet das Spiel mit den dazugehörigen Menüs.
 \subsubsection{GameLogic.cs}
+Diese Klasse beinhaltet die Logik des Mathe Spiels.
 \subsubsection{MenuScript.cs}
+Hier werden die Funktionen des Menüs zur Verfügung gestellt.
 \subsubsection{NetworkMenu.cs}
+Hiermit wird die Netzwerkverbindung erstellt und verwaltet.
 \subsubsection{NetworkSync.cs}
+Eine Helferklasse mit der die Abläufe einer Netzwerkverbindung synchronisiert werden sollen.
 \subsubsection{NetworkObject.cs}
+Die Repräsentation eines Clients im Spiel.
 
 \subsection{Spielablauf}
 In diesem Abschnitt wird der Ablauf ab Beginn des Programms beschrieben. Die Oberflächen bestehen aus Knöpfen und Eingabefeldern, navigiert und interagiert wird mittels Maus und Tastatur. Der erste Bildschirm ist das Netzwerkmenü, in welchen man wählen kann ob man als Host spielen will oder als Client. Für den Fall, dass man als Client spielt kann man in die Netzwerkadresse des Hosts und den dazugehörigen Port ändern.\newline
@@ -83,44 +91,56 @@ Im Hauptmenü kann eine Spielpartie gestartet werden in dem auf den  ''Start''-K
 Im Spiel hat man mehrere Anzeigen und ein Eingabefeld. Die folgende Oberfläche beschreibt einen generellen Fall des Spielmodus und trifft am ehesten auf den ''Singleplayer''-Modus zu. Die Anzeige am mittigen, oberen Bildschirmrand ist die verbleibende Zeit, darunter findet man die ''Score''-Einblendung. Zentral und im Verhältnis am größten dargestellt findet man die zu lösende Rechnung. Unterhalb der Aufgabe ist das Eingabefeld in dem die Lösung eingegeben wird. Zur Eingabe wird die Tastatur verwendet, wobei nur Zahlen eingeben und das '-'-Zeichen akzeptiert werden. Mit der ''Enter/Return''-Taste wird eine Eingabe bestätigt, mit der ''Backspace''-Taste können unbestätigte Eingaben wieder rückgängig gemacht werden. Wenn eine Aufgabe richtig beantwortet bekommt man einen Punkt zum Score hinzu, dies wird durch einen Ton und einer Animation zusätzlich visualisiert. Für den Fall einer falschen Lösung wird die Punktzahl um einen Punkt reduziert, dass überspringen einer Aufgabe ist auch möglich wenn eine leere Eingabe bestätigt wird. Überspringen gibt keinen Punkt zum Score, zieht aber auch keinen ab. Auch das Verlieren oder überspringen einer Aufgabe hat jeweils eine eignen Animation und einen Ton.
 
 \subsubsection{Modi und Testszenarien}
-Das Spiel besitzt verschiedene Modi um die unterschiedlichen Testszenarien abzubilden. Die Modi erben in einer bestimmten von einem Standardmodus. Der Ursprungsmodus lässt sich schon mittels der Einstellungen modifizieren. Änderungen durch veränderte Einstellungen sind zum Beispiel die Dauer des Spiels, das Anzeigen der erzielten Punkte oder der verbleibenden Zeit. Das Spiel terminiert entweder manuell nach dem betätigen der 'escape'-Taste oder nach einer gesetzten Zeit, da diese auch als 'unendlich' eingestellt werden kann, ist das händische Beenden immer möglich. Die Aufgaben können während eines Spieldurchlaufs zufällig generiert werden oder im Vorfeld erstellt, gespeichert und dann für ein Spiel geladen werden. Im folgenden werden alle Implementierten Modi beschrieben:\itemize
+Das Spiel besitzt verschiedene Modi um die unterschiedlichen Testszenarien abzubilden. Die Modi erben in einer bestimmten von einem Standardmodus. Der Ursprungsmodus lässt sich schon mittels der Einstellungen modifizieren. Änderungen durch veränderte Einstellungen sind zum Beispiel die Dauer des Spiels, das Anzeigen der erzielten Punkte oder der verbleibenden Zeit. Das Spiel terminiert entweder manuell nach dem betätigen der 'escape'-Taste oder nach einer gesetzten Zeit, da diese auch als 'unendlich' eingestellt werden kann, ist das händische Beenden immer möglich. Die Aufgaben können während eines Spieldurchlaufs zufällig generiert werden oder im Vorfeld erstellt, gespeichert und dann für ein Spiel geladen werden. Im folgenden werden alle implementierten Modi beschrieben:\itemize
 \item''Singleplayer''-Modus:\newline
 Dieser Modus entspricht dem Basisspiel. Man spielt ohne Gegner und versucht einen möglichst hohe Punktzahl zu erzielen.
 \item''Halb-Coop''-Modus:\newline{}
 Der Gedanke in dieser Variante ist das zwei oder mehrere Menschen den Einzelspielermodus parallel spielen. Dafür synchronisiert sich der Start des Spiels der Personen. Ansonsten entspricht alles dem Basisspiels.
 \item''Versus''- \& ''Versus2''-Modus:\newline
-Der ''Versus''-Modus entspricht einer klassischen Umsetzung von Wettbewerb, zwei Spieler spielen gegen einander. Die Punktzahlen von beiden werden gegenübergestellt, damit ein Vergleich der Leistung stattfinden kann. Die Punkteanzeige auf dem Bildschirm eines Nutzers ist in dieser Variante leicht modifiziert,  denn sie zeigt  auch den Punktestand des Gegenübers an (Bsp. X vs. Y, mit X als die Punkte des Spielers und Y als die Punkte des Gegners).
+Der ''Versus''-Modus entspricht einer klassischen Umsetzung von Wettbewerb, zwei Spieler spielen gegen einander. Die Punktzahlen von beiden werden gegenübergestellt, damit ein Vergleich der Leistung stattfinden kann. Die Punkteanzeige auf dem Bildschirm eines Nutzers ist in dieser Variante leicht modifiziert,  denn sie zeigt  auch den Punktestand des Gegenübers an (Bsp. X vs. Y, mit X als die Punkte des Spielers und Y als die Punkte des Gegners). Die zwei Varianten unterscheiden sich nur im Namen, dies Unterteilung ist für die Logbuchdateien notwendig.
 %\item''Versus 2''-Modus:\newline
 \item''Party''-Modus:\newline
 Um den Wettbewerb mit mehreren Teilnehmern darzustellen wurde dieser Modus implementiert. Die Teilnehmerzahl ist variabel und wird mit ''falschen Spielern'' von Spiel aufgefüllt, wenn eine gewünschte Spielerzahl nicht mit Nutzern erreicht wird. Das Userinterface ähnelt mehr dem der Einzelspielermodi als dem der ''Versus''-Modus, mit einem unterschied es gibt eine Ranglistenanzeige, die die Punkte der Nutzer und der, falls vorhanden, falschen Spieler in Verhältnis setzt. Die Person ganz oben in der Liste hat die höchste Punktzahl, wenn man nicht an dieser Position ist signalisiert die Liste das, indem sie leicht pulsiert.
 \item''Collab''-Modus:\newline
 Ein Modus, der etwas gegen den Gedanken der anderen Modi geht, wurde auch implementiert.  In diesem Modus kooperieren die Spieler um einen gemeinsamen Punktstand zu erhöhen. In diesem Modus entspricht der Bildschirm wieder dem des Basisspiels, der unterschied zwischen einem eigen Beitrag zum Punktestand und dem eines Mitspielers, ist die Animation ob man einen oder keinen Punkt hinzugefügt, beziehungsweise abgezogen hat.
-
+\newline
 further improvement of visual (on going)\newline
 usability improvements
+
 \subsubsection{Datensammlung und Spielverlaufslogbuch}
 Während eines Spieldurchlaufs wollen wir verschiedene Faktoren beobachten, um Rückschlüsse auf die Einflüsse der Testszenarien  machen zu können. Für diesen Zweck sammeln wir  Daten des Spielverlaufs und lassen sie uns für eine spätere Analyse speichern. Vom Spiel werden nach einer Runde drei Dateien angelegt, die die gewünschten Ereignisse dokumentieren. Die Logbuchdateien eines Spielers werden in einen Ordner unter einem angegeben Pfad gespeichert, welcher in der Form ''ParticipantX'', wobei X der jeweiligen Nutzeridentifikationsnummer entspricht (Bsp. Participant1), benannt wird. Die drei Dateien einer Runde Unterscheiden sich im Dateiformat und gering  im Informationsgehalt. Die im Spiel zu beobachteten Variablen werden zum einen serialisiert und dann als ''.dat'' gespeichert, diese Dateien dienen ausschließlich als redundante Sicherheitskopie und könnten wieder deserialisiert und  geladen werden. Dies ist im Code nicht umgesetzt worden, da keine Notwendigkeit bestand.\newline
 Um den Verlauf einer Runde in der Retrospektive nachvollziehen zu können, werden als ''.txt''-Dateien stichpunktartige Protokolle der Ereignisse dokumentiert.\newline
 Für die Datenauswertung  werden hauptsächlich die ''.csv''-Dateien verwendet. Solche Dateien können in Programmen, die speziell für die Datenverarbeitung  und Analyse dienen, eingelesen und verarbeitet werden.
-
-\subsection{Pre-Study}
+%bug fixes\newline
+%removal of animations\newline
+%scripted player\newline
+\subsection{Vorstudie}
+Mit der Vorstudie wurde die Lauffähigkeit des Spiels getestet und versucht einen ersten Ansatz für mögliche Beobachtungen in der Haupttestreihe zu finden. Es wurden die Modi ''Singlepayer'', ''Halb-Coop'', ''Versus'' und '' Party'' von fünf Teilnehmern gespielt. Anhand der Impressionen wurden Fehler im Spiel ausgebessert und Änderungen vorgenommen, so wurden die Eingangs- und Austrittsanimationen der Aufgaben entfernt damit ein ununterbrochener Spielablauf entstehen kann. Auch die Wahl der zu testenden Modi wurde geändert. Die nun in der Hauptstudie zu Testenden Szenarien sind  ''Singleplayer'', ''Halb-Coop'', ''Versus'' und ''Versus2''.
+\newline
 first data impression (no learning in later turns?)
 bug report
-\subsection{Second Phase}
+\subsection{Fragebogen}
 bug fixes\newline
-removal of animations\newline
-scripted player\newline
+removal of animation
 
-\chapter{Nutzerstudie}
-\subsection{Aufbau}
-Für einen Durchlauf wid ein Teilnehmer in den Versuchsaufbau gebeten. Es sind zwei Computer aufgebaut auf denen das Spiel läuft und die über das Netzwerk miteinander verbunden sind.
+\section{Aufbau}
+Für einen Durchlauf wird ein einzelner Teilnehmer in den Versuchsaufbau gebeten. Es sind zwei Computer aufgebaut auf denen das Spiel läuft und die über das Netzwerk miteinander verbunden sind. Zunächst füllt er den ersten Teil des Fragebogen aus. Anschließend spielt er einen Modus und beantwortet danach den zugehörigen Teil des Fragebogens. Dies wiederholt er bis er alle Modi gespielt hat. Die Reihenfolge der Modi für jeden Teilnehmer durch, sodass erst bei mehr als 24 Teilnehmern die Reihenfolge sich wiederholt. Zwischen den Spielszenarien lassen sich drei verschieden Aufbauten definieren, die alle die gemein haben, dass die Versuchsperson nicht alleine sondern immer unter Aufsicht des Betreuers ist. Beim ''Singleplayer''-Modus spielt der  Teilnehmer alleine und wird vom Versuchsleiter nur beobachtet. Der ''Halb-Coop''-Modus  versucht einen indirekten Wettbewerb aufzubauen in dem der Spieler zeitgleich mit dem Betreuer den ''Singleplayer''-Modus spielt und zusätzlich die Möglichkeit bekommt den Bildschirm des Gegenübers zu sehen. Allerdings wird ihm dieses Szenario als eine Variante beschrieben wo er nur auf sein Spiel achten braucht. Im Gegensatz dazu wird in den Modi ''Versus'' und ''Versus2'' direkt auf den Vergleich der Punktzahlen hingewiesen. In diesen Varianten sieht der Spieler nur seinen eigenen Bildschirm und bekommt daher nur über den Anzeigen in seinem Spiel den Fortschritt seines Gegenspieler mit. Der Unterschied der beiden Szenarien ist die narrative die man dem Teilnehmer liefert, im ''Versus''-Modus wir ihnen erzählt, dass sie gegen die Person spielen, die sie beaufsichtigt. Im '' Versus2'' spielen sie angeblich gegen einen künstlichen  Gegner, der anhand des durchschnittlichen Spielers, der sich aus der Vorstudie ermitteln lies, generiert wurde. Faktisch spielt der Versuchsleiter zu keinen Zeitpunkt mit oder gegen die Teilnehmer, jedes mal wenn ein zweiter Spieler benötigt wird, spielt sie gegen die selbe Instanz. Der Gegenspieler ist ein simpler Algorithmus, der anhand der letzten drei Antwortzeiten des Teilnehmers seine eigene eigene errechnet.
+\subsection{Beobachtungsgruppen}
+Für die Untersuchung wurden keine speziellen Kriterien für die Wahl der Teilnehmer im vor hinein gefällt. Angestrebt wurde es um die 30 Nutzer insgesamt zu sammeln, diese würden sich in eine kleine Gruppe für eine Vorstudie und einer Gruppe mit ca. 24 Teilnehmern für die Hauptstudie aufteilen. Die Zahl 24 ergibt sich durch das Permutieren der Reihenfolge der vier Testszenarien. Es wurden im totalen 25 Teilnehmer rekrutiert, davon bilden 20 die Hauptgruppe. Alle Teilnehmer lassen sich in die Altersgruppe 18- 29 ein ordnen und hatten ungefähr den selben Bildungsstand, überwiegend Studierende der Mathematik oder Informatik. Die Mehrheit der Teilnehmer ist männlich.
 
 \section{Auswertung der Fragebögen}
+Die Teilnehmer wurden gebeten ihr Empfinden, den Eindruck der gespielten Szenarien und dem Spiel im ganzen in einem Fragebogen festzuhalten. So wurden Sie gefragt, bevor sie gespielt haben, wie sie ihre Fähigkeit im Kopf zurechnen einschätzen, denn dies ist die Aufgabe in allen Testszenarien. 
+\newline
+kopfrechenskill einschätzung <-> endscores
+einstellung zu wettbewerb <-> endscores
+stimmung <-> sieg/niederlage
+stimmung <-> wahrnehmung des spiels
+sieg/niederlage <-> wahrnehmung des spiels
 \section{Auswertung der Spieldaten}
 
+\chapter{Disskussion}
 \chapter{Ausblick}
 
-\newpage
 \bibliography{Bibliographie}
 
 \end{document}
