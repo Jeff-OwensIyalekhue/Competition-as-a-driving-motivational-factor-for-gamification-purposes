@@ -1,0 +1,45 @@
+% Encoding: UTF-8
+
+@Article{Deci1981,
+  author    = {Edward L. Deci and Gregory Betley and James Kahle and Linda Abrams and Joseph Porac},
+  title     = {When Trying to Win},
+  journal   = {Personality and Social Psychology Bulletin},
+  year      = {1981},
+  volume    = {7},
+  number    = {1},
+  pages     = {79--83},
+  month     = {mar},
+  doi       = {10.1177/014616728171012},
+  publisher = {{SAGE} Publications},
+}
+
+@InProceedings{Hamari2014,
+  author    = {Juho Hamari and Jonna Koivisto and Harri Sarsa},
+  title     = {Does Gamification Work? -- A Literature Review of Empirical Studies on Gamification},
+  booktitle = {2014 47th Hawaii International Conference on System Sciences},
+  year      = {2014},
+  month     = {jan},
+  publisher = {{IEEE}},
+  doi       = {10.1109/hicss.2014.377},
+}
+
+@Article{Sailer2017,
+  author    = {Michael Sailer and Jan Ulrich Hense and Sarah Katharina Mayr and Heinz Mandl},
+  title     = {How gamification motivates: An experimental study of the effects of specific game design elements on psychological need satisfaction},
+  journal   = {Computers in Human Behavior},
+  year      = {2017},
+  volume    = {69},
+  pages     = {371--380},
+  month     = {apr},
+  doi       = {10.1016/j.chb.2016.12.033},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{nacke2012flow,
+  author  = {Nacke, Lennart E},
+  title   = {Flow in games: Proposing a flow experience model},
+  journal = {Fun and Games},
+  year    = {2012},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

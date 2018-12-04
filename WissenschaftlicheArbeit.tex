@@ -103,9 +103,28 @@ Der ''Versus''-Modus entspricht einer klassischen Umsetzung von Wettbewerb, zwei
 Um den Wettbewerb mit mehreren Teilnehmern darzustellen wurde dieser Modus implementiert. Die Teilnehmerzahl ist variabel und wird mit ''falschen Spielern'' von Spiel aufgefüllt, wenn eine gewünschte Spielerzahl nicht mit Nutzern erreicht wird. Das Userinterface ähnelt mehr dem der Einzelspielermodi als dem der ''Versus''-Modus, mit einem unterschied es gibt eine Ranglistenanzeige, die die Punkte der Nutzer und der, falls vorhanden, falschen Spieler in Verhältnis setzt. Die Person ganz oben in der Liste hat die höchste Punktzahl, wenn man nicht an dieser Position ist signalisiert die Liste das, indem sie leicht pulsiert.
 \item''Collab''-Modus:\newline
 Ein Modus, der etwas gegen den Gedanken der anderen Modi geht, wurde auch implementiert.  In diesem Modus kooperieren die Spieler um einen gemeinsamen Punktstand zu erhöhen. In diesem Modus entspricht der Bildschirm wieder dem des Basisspiels, der unterschied zwischen einem eigen Beitrag zum Punktestand und dem eines Mitspielers, ist die Animation ob man einen oder keinen Punkt hinzugefügt, beziehungsweise abgezogen hat.
-\newline
-further improvement of visual (on going)\newline
-usability improvements
+\begin{figure}[h]
+	\centering	
+	\begin{subfigure}[a]{0.3\linewidth}
+		\includegraphics[width=(\linewidth)]{singleplayer}
+		\caption{Singleplayer}
+		\label{fig:singleplayer}
+	\end{subfigure}	
+	\begin{subfigure}[a]{0.3\linewidth}
+		\includegraphics[width=(\linewidth)]{versus}
+		\caption{Versus}
+		\label{fig:versus}
+	\end{subfigure}
+	\begin{subfigure}[a]{0.3\linewidth}
+		\includegraphics[width=(\linewidth)]{party}
+		\caption{Party}
+		\label{fig:party}
+	\end{subfigure}	
+	\caption{Bildschrimaufnahme der Modi}
+\end{figure}
+
+%further improvement of visual (on going)\newline
+%usability improvements
 
 \subsubsection{Datensammlung und Spielverlaufslogbuch}
 Während eines Spieldurchlaufs wollen wir verschiedene Faktoren beobachten, um Rückschlüsse auf die Einflüsse der Testszenarien  machen zu können. Für diesen Zweck sammeln wir  Daten des Spielverlaufs und lassen sie uns für eine spätere Analyse speichern. Vom Spiel werden nach einer Runde drei Dateien angelegt, die die gewünschten Ereignisse dokumentieren. Die Logbuchdateien eines Spielers werden in einen Ordner unter einem angegeben Pfad gespeichert, welcher in der Form ''ParticipantX'', wobei X der jeweiligen Nutzeridentifikationsnummer entspricht (Bsp. Participant1), benannt wird. Die drei Dateien einer Runde Unterscheiden sich im Dateiformat und gering  im Informationsgehalt. Die im Spiel zu beobachteten Variablen werden zum einen serialisiert und dann als ''.dat'' gespeichert, diese Dateien dienen ausschließlich als redundante Sicherheitskopie und könnten wieder deserialisiert und  geladen werden. Dies ist im Code nicht umgesetzt worden, da keine Notwendigkeit bestand.\newline
@@ -142,5 +161,6 @@ sieg/niederlage <-> wahrnehmung des spiels
 \chapter{Ausblick}
 
 \bibliography{Bibliographie}
+\listoffigures
 
 \end{document}

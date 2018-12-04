@@ -1,0 +1,33 @@
+\select@language {ngerman}
+\vspace {-10pt}
+\contentsline {chapter}{\numberline {1}Abstrakt}{2}{chapter.1}
+\vspace {-10pt}
+\contentsline {chapter}{\numberline {2}Einleitung}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Motivation}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Definitionen}{3}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Gamification}{3}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Wettbewerb und Motivation}{3}{subsection.2.2.2}
+\vspace {-10pt}
+\contentsline {chapter}{\numberline {3}Ansatz und Vorgehensweise}{4}{chapter.3}
+\contentsline {section}{\numberline {3.1}Implementation}{4}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Technologie}{4}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Quellcode Zusammenfassung}{4}{subsection.3.1.2}
+\contentsline {subsubsection}{\nonumberline GameManager.cs}{4}{section*.2}
+\contentsline {subsubsection}{\nonumberline GameLogic.cs}{4}{section*.3}
+\contentsline {subsubsection}{\nonumberline MenuScript.cs}{5}{section*.4}
+\contentsline {subsubsection}{\nonumberline NetworkMenu.cs}{5}{section*.5}
+\contentsline {subsubsection}{\nonumberline NetworkSync.cs}{5}{section*.6}
+\contentsline {subsubsection}{\nonumberline NetworkObject.cs}{5}{section*.7}
+\contentsline {subsection}{\numberline {3.1.3}Spielablauf}{5}{subsection.3.1.3}
+\contentsline {subsubsection}{\nonumberline Modi und Testszenarien}{6}{section*.8}
+\contentsline {subsubsection}{\nonumberline Datensammlung und Spielverlaufslogbuch}{7}{section*.10}
+\contentsline {subsection}{\numberline {3.1.4}Vorstudie}{8}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Fragebogen}{8}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Aufbau}{8}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Beobachtungsgruppen}{9}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Auswertung der Frageb\IeC {\"o}gen}{9}{section.3.3}
+\contentsline {section}{\numberline {3.4}Auswertung der Spieldaten}{9}{section.3.4}
+\vspace {-10pt}
+\contentsline {chapter}{\numberline {4}Disskussion}{10}{chapter.4}
+\vspace {-10pt}
+\contentsline {chapter}{\numberline {5}Ausblick}{11}{chapter.5}
